@@ -2,3 +2,10 @@
   margin: 0 auto;
   text-align: center;
 }
+
+.myNavBar {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}

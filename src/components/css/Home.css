@@ -1,0 +1,16 @@
+/*home component*/
+* {
+  margin: 0;
+  padding: 0;
+}
+.myLinks {
+  color: white;
+}
+
+.vader {
+  background-image: url("/images/vader.jpg");
+  background-size: cover;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+}
