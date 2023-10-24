@@ -11,3 +11,8 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+
+/*About&Planet's component header*/
+.header {
+  margin-top: 40px;
+}
