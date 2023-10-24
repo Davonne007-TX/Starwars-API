@@ -1,0 +1,45 @@
+/*home component*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.myLinks {
+  color: white;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.vader {
+  background-image: url("/images/vader.jpg");
+  background-size: cover;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-family: "Audiowide", cursive;
+  font-size: 4em;
+}
+
+/*NavBar component*/
+.myLinks,
+a {
+  color: white;
+  font-family: "Audiowide", cursive;
+  text-decoration: none;
+  cursor: pointer;
+}
