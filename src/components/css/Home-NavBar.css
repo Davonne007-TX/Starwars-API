@@ -32,7 +32,7 @@
 
 h1 {
   font-family: "Audiowide", cursive;
-  font-size: 4em;
+  font-size: 5em;
 }
 
 /*NavBar component*/
@@ -42,4 +42,10 @@ a {
   font-family: "Audiowide", cursive;
   text-decoration: none;
   cursor: pointer;
+  font-size: 16pt;
+}
+
+.myLinks,
+a:hover {
+  color: #b0091f;
 }
