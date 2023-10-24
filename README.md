@@ -1,1 +1,1 @@
-# Starwars Project, using the Starwars API
+# Starwars API Project
