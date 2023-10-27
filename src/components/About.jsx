@@ -5,7 +5,9 @@ export default function About() {
   return (
     <>
       <div className="header">
-        <Link to="/">About Page</Link>
+        <Link to="/" className="heading2">
+          About Page
+        </Link>
         <NavBar />
       </div>
     </>

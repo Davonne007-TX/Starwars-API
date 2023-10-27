@@ -3,7 +3,7 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  background-color: #242424;
+  background-color: black
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -15,4 +15,9 @@
 /*About&Planet's component header*/
 .header {
   margin-top: 40px;
+}
+
+.heading2 {
+  font-size: 3em;
+  font-family: "Audiowide", cursive;
 }

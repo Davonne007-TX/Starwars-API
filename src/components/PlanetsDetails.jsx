@@ -8,7 +8,7 @@ export default function PlanetsDetails() {
   return (
     <>
       <div className="header">
-        <Link to="/">Planets Page</Link>
+        <Link to="/">Single Planet Details</Link>
         <NavBar />
       </div>
     </>

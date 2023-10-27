@@ -1,21 +1,19 @@
-import { useState, useEffect } from "react";
+import NavBar from "./NavBar";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import "./css/Planets.css";
 
-export default function PlanetList() {
-  const [planet, setPlanet] = useState([]);
+export default function PlanetsDetails() {
+  return (
+    <>
+      <div className="header">
+        <Link to="/" className="heading2">
+          Star Wars Planets
+        </Link>
+        <NavBar />
+      </div>
 
-  useEffect(() => {
-    const fetchPlanets = async () => {
-      try {
-        const response = await fetch("http://swapi.dev/api/planets");
-        const starWarsPlanets = await response.json();
-        console.log("Star Wars Planets:", starWarsPlanets);
-        setPlanet(starWarsPlanets.results);
-      } catch (error) {
-        console.error("Error:", error);
-      }
-    };
-    fetchPlanets();
-  }, []);
-
-  return <div>PlanetList</div>;
+      <img src="/images/planet.jpg" className="orangePlanet" />
+    </>
+  );
 }
