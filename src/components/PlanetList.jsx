@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./css/Planets.css";
 
-export default function PlanetsDetails() {
-  const [planet, setPlanets] = useState([]);
+export default function PlanetList({ setSelectedPlanet }) {
+  const [planets, setPlanets] = useState([]);
 
   useEffect(() => {
     const fetchPlanets = async () => {
@@ -29,7 +29,15 @@ export default function PlanetsDetails() {
         <NavBar />
       </div>
 
-      <img src="/images/planet.jpg" className="orangePlanet" />
+      {planets.map((planet) => (
+        <div className="starWarsPlanet" key={planet.url}>
+          <h3>{planet.name}</h3>
+          <p>Climate: {planet.climate}</p>
+          <p>Population: {planet.population}</p>
+          <p>Gravity:{planet.gravity}</p>
+          <p>Orbital Period:{planet.orbital_period}</p>
+        </div>
+      ))}
     </>
   );
 }
