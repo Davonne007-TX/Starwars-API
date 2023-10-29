@@ -39,3 +39,8 @@ p {
   margin-bottom: 10px;
   margin-top: 20px;
 }
+
+.seeDetails:hover {
+  color: #b0091f;
+  cursor: pointer;
+}
