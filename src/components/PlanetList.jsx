@@ -6,17 +6,18 @@ import "./css/Planets.css";
 export default function PlanetList({ setSelectedPlanet }) {
   const [planets, setPlanets] = useState([]);
 
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
   useEffect(() => {
     const fetchPlanets = async () => {
-      try {
-        const response = await fetch("http://swapi.dev/api/planets");
-        const starWarsPlanets = await response.json();
-        setPlanets(starWarsPlanets.results);
-        console.log("Star Wars Planets:", starWarsPlanets);
-      } catch (error) {
-        console.error("Error:", error);
-      }
+      const response = await fetch("http://swapi.dev/api/planets");
+      const starWarsPlanets = await response.json();
+      console.log("Star Wars Planets:", starWarsPlanets);
+      setPlanets(starWarsPlanets.results);
     };
+
     fetchPlanets();
   }, []);
 
@@ -28,14 +29,20 @@ export default function PlanetList({ setSelectedPlanet }) {
         </Link>
         <NavBar />
       </div>
-
       {planets.map((planet) => (
         <div className="starWarsPlanet" key={planet.url}>
           <h3>{planet.name}</h3>
-          <p>Climate: {planet.climate}</p>
+          <p>Climate: {capitalizeFirstLetter(planet.climate)}</p>
           <p>Population: {planet.population}</p>
           <p>Gravity:{planet.gravity}</p>
           <p>Orbital Period:{planet.orbital_period}</p>
+          <button
+            type="button"
+            className="seeDetails"
+            onClick={() => setSelectedPlanet(planet)}
+          >
+            See Details
+          </button>
         </div>
       ))}
     </>

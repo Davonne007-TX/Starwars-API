@@ -21,8 +21,21 @@
 
 h3 {
   font-size: 22pt;
+  font-family: "Audiowide", cursive;
 }
 
 p {
   font-size: 18pt;
+  font-family: sans-serif;
+}
+
+.seeDetails {
+  background-color: white;
+  color: black;
+  border-radius: 15px;
+  padding: 10px;
+  font-family: "Audiowide", cursive;
+  font-size: 12pt;
+  margin-bottom: 10px;
+  margin-top: 20px;
 }
