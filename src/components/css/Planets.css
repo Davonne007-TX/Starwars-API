@@ -19,6 +19,20 @@
   display: block;
 }
 
+@media screen and (max-width: 375px) {
+  .starWarsPlanet {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .starWarsPlanet {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
 .loading {
   font-size: 7em;
   margin-top: 150px;
@@ -56,6 +70,11 @@ p {
   font-family: sans-serif;
 }
 
+@media screen and (max-width: 375px) {
+  p {
+    font-size: 14pt;
+  }
+}
 .seeDetails {
   background-color: white;
   color: black;

@@ -6,7 +6,7 @@ export default function About() {
     <>
       <div className="header">
         <Link to="/" className="heading2">
-          About Page
+          Star Wars API
         </Link>
         <NavBar />
       </div>
