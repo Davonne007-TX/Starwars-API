@@ -37,7 +37,10 @@ export default function PlanetList({ setSelectedPlanet }) {
       </div>
 
       {loading ? (
-        <div className="loading">Loading...</div>
+        <>
+          <div className="loading">Loading</div>
+          <div className="spinner"></div>
+        </>
       ) : (
         planets.map((planet) => (
           <div className="starWarsPlanet" key={planet.url}>
