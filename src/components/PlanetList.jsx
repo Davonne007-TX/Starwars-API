@@ -5,6 +5,7 @@ import "./css/Planets.css";
 
 export default function PlanetList({ setSelectedPlanet }) {
   const [planets, setPlanets] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -12,12 +13,17 @@ export default function PlanetList({ setSelectedPlanet }) {
 
   useEffect(() => {
     const fetchPlanets = async () => {
-      const response = await fetch("http://swapi.dev/api/planets");
-      const starWarsPlanets = await response.json();
-      console.log("Star Wars Planets:", starWarsPlanets);
-      setPlanets(starWarsPlanets.results);
+      try {
+        const response = await fetch("http://swapi.dev/api/planets");
+        const ourPlanets = await response.json();
+        console.log("Star Wars Planets:", ourPlanets);
+        setPlanets(ourPlanets.results);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error:", error);
+        setLoading(false);
+      }
     };
-
     fetchPlanets();
   }, []);
 
@@ -29,22 +35,27 @@ export default function PlanetList({ setSelectedPlanet }) {
         </Link>
         <NavBar />
       </div>
-      {planets.map((planet) => (
-        <div className="starWarsPlanet" key={planet.url}>
-          <h3>{planet.name}</h3>
-          <p>Climate: {capitalizeFirstLetter(planet.climate)}</p>
-          <p>Population: {planet.population}</p>
-          <p>Gravity:{planet.gravity}</p>
-          <p>Orbital Period:{planet.orbital_period}</p>
-          <button
-            type="button"
-            className="seeDetails"
-            onClick={() => setSelectedPlanet(planet)}
-          >
-            See Details
-          </button>
-        </div>
-      ))}
+
+      {loading ? (
+        <div className="loading">Loading...</div>
+      ) : (
+        planets.map((planet) => (
+          <div className="starWarsPlanet" key={planet.url}>
+            <h3>{planet.name}</h3>
+            <p>Climate: {capitalizeFirstLetter(planet.climate)}</p>
+            <p>Population: {planet.population}</p>
+            <p>Gravity:{planet.gravity}</p>
+            <p>Orbital Period:{planet.orbital_period}</p>
+            <button
+              type="button"
+              className="seeDetails"
+              onClick={() => setSelectedPlanet(planet)}
+            >
+              See Details
+            </button>
+          </div>
+        ))
+      )}
     </>
   );
 }

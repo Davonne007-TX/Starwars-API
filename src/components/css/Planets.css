@@ -19,6 +19,12 @@
   display: block;
 }
 
+.loading {
+  font-size: 7em;
+  margin-top: 150px;
+  font-family: "Audiowide", cursive;
+}
+
 h3 {
   font-size: 22pt;
   font-family: "Audiowide", cursive;
