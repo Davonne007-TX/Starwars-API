@@ -35,7 +35,7 @@ export default function PlanetsDetails({ planet, setSelectedPlanet }) {
         <NavBar />
       </div>
 
-      <div>
+      <div className="single-planet-container">
         {singlePlanet ? (
           <>
             <h2>More Details about Planet</h2>
