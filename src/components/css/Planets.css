@@ -75,6 +75,12 @@ p {
     font-size: 14pt;
   }
 }
+
+@media screen and (max-width: 414px) {
+  p {
+    font-size: 14pt;
+  }
+}
 .seeDetails {
   background-color: white;
   color: black;
@@ -89,4 +95,19 @@ p {
 .seeDetails:hover {
   color: #b0091f;
   cursor: pointer;
+}
+
+/*PlanetsDetails Component*/
+.goBack {
+  background-color: #b0091f;
+  padding: 10px;
+  margin-top: 20px;
+  font-size: 14pt;
+  font-family: "Audiowide", cursive;
+  border-radius: 20px;
+}
+
+.goBack:hover {
+  cursor: pointer;
+  color: black;
 }

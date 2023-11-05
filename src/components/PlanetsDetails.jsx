@@ -1,14 +1,15 @@
 import NavBar from "./NavBar";
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState, useParams } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function PlanetsDetails({ planet, setSelectedPlanet }) {
   const [singlePlanet, setSinglePlanet] = useState(null);
 
   useEffect(() => {
-    const fetchSinglePlanetDetails = async () => {
+    const fetchPlanetDetails = async (id) => {
       try {
-        const response = await fetch(planet.url);
+        const response = await fetch(`http://swapi.dev/api/planets/${id}`);
+
         const getSinglePlanet = await response.json();
         console.log("Single Planet:", getSinglePlanet);
         setSinglePlanet(getSinglePlanet);
@@ -16,13 +17,21 @@ export default function PlanetsDetails({ planet, setSelectedPlanet }) {
         console.error("Error", error);
       }
     };
-    fetchSinglePlanetDetails();
+    fetchPlanetDetails();
   }, []);
+
+  const navigate = useNavigate();
+
+  function backToList() {
+    navigate("/planets");
+  }
 
   return (
     <>
       <div className="header">
-        <Link to="/">Single Planet Details</Link>
+        <Link to="/" className="heading2">
+          Single Planet Details
+        </Link>
         <NavBar />
       </div>
 
@@ -35,7 +44,7 @@ export default function PlanetsDetails({ planet, setSelectedPlanet }) {
             <p>Population: {singlePlanet.population}</p>
             <p>Diameter: {singlePlanet.diameter}</p>
             <p>Gravity: {singlePlanet.gravity}</p>
-            <button className="goBack" onClick={() => setSelectedPlanet(null)}>
+            <button className="goBack" onClick={backToList}>
               Back To List
             </button>
           </>

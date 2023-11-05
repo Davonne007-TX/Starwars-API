@@ -1,11 +1,16 @@
 import NavBar from "./NavBar";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./css/Planets.css";
 
 export default function PlanetList({ setSelectedPlanet }) {
   const [planets, setPlanets] = useState([]);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
+
+  function goToPlanetDetails() {
+    navigate("/planet-details");
+  }
 
   function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -52,7 +57,7 @@ export default function PlanetList({ setSelectedPlanet }) {
             <button
               type="button"
               className="seeDetails"
-              onClick={() => setSelectedPlanet(planet)}
+              onClick={goToPlanetDetails}
             >
               See Details
             </button>
