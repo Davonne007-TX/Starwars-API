@@ -1,4 +1,3 @@
-import NavBar from "./NavBar";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./css/Planets.css";
@@ -39,7 +38,6 @@ export default function PlanetList({ setSelectedPlanet }) {
         <Link to="/" className="heading2">
           Star Wars Planets
         </Link>
-        <NavBar />
       </div>
 
       {loading ? (
