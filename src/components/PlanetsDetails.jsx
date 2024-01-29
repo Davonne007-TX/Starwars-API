@@ -1,4 +1,3 @@
-import NavBar from "./NavBar";
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
@@ -11,7 +10,7 @@ export default function PlanetsDetails() {
       try {
         const response = await fetch(`http://swapi.dev/api/planets/${id}`);
         const planetDetails = await response.json();
-        console.log("Selected Pokemon:", planetDetails);
+        console.log("Selected Planet:", planetDetails);
         setSelectedPlanet(planetDetails);
       } catch (error) {
         console.error("Error:", error);
@@ -22,7 +21,7 @@ export default function PlanetsDetails() {
     }
   }, [id]);
 
-  //use navigate
+  //useNavigate
   const navigate = useNavigate();
 
   function backToList() {
@@ -31,11 +30,10 @@ export default function PlanetsDetails() {
 
   return (
     <>
-      <div className="header">
-        <Link to="/" className="heading2">
+      <div className="mt-10">
+        <Link to="/" className="font-audio text-4xl">
           Single Planet Details
         </Link>
-        <NavBar />
       </div>
 
       <div className="single-planet-container}">

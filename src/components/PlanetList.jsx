@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "./css/Planets.css";
+import "./css/spinner.css";
 
 export default function PlanetList({ setSelectedPlanet }) {
   const [planets, setPlanets] = useState([]);
@@ -35,7 +35,7 @@ export default function PlanetList({ setSelectedPlanet }) {
   return (
     <>
       <div className="header">
-        <Link to="/" className="heading2">
+        <Link to="/" className="">
           Star Wars Planets
         </Link>
       </div>
