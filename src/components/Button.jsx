@@ -1,8 +1,11 @@
 import React from "react";
 
-export default function Button({ label, onClick, className }) {
+export default function Button({ label, onClick }) {
   return (
-    <button onClick={onClick} className={className}>
+    <button
+      onClick={onClick}
+      className="mb-20 mt-10 bg-black p-2 rounded-full font-audio text-white hover:underline"
+    >
       {label}
     </button>
   );

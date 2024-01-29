@@ -3,13 +3,13 @@ import { Link, useNavigate } from "react-router-dom";
 import Button from "./Button";
 import "./css/spinner.css";
 
-export default function PlanetList({ setSelectedPlanet }) {
+export default function PlanetList() {
   const [planets, setPlanets] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   function goToPlanetDetails(url) {
-    const planetId = url.split("/").filter(Boolean).pop(); // Extract the planet ID
+    const planetId = url.split("/").filter(Boolean).pop();
     navigate(`/planet-details/${planetId}`);
   }
 
@@ -61,7 +61,6 @@ export default function PlanetList({ setSelectedPlanet }) {
               <h3 className="font-audio text-4xl mt-20">{planet.name}</h3>
               <Button
                 onClick={() => goToPlanetDetails(planet.url)}
-                className="mb-20 bg-black p-2 rounded-full font-audio text-white hover:underline"
                 label={"See Details"}
               ></Button>
             </div>
