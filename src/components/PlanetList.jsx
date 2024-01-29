@@ -35,38 +35,38 @@ export default function PlanetList() {
 
   return (
     <>
-      <div className="mt-10">
+      <div className=" flex flex-col">
         <Link
           to="/"
-          className="font-audio text-5xl hover:text-darkRed hover:underline"
+          className="font-audio text-5xl hover:text-darkRed hover:underline mt-10"
         >
           Star Wars Planets
         </Link>
-      </div>
 
-      {loading ? (
-        <>
-          <div className="font-audio text-6xl flex flex-col h-screen justify-center items-center">
-            Loading
-            <div className="spinner"></div>
-          </div>
-        </>
-      ) : (
-        planets.map((planet) => (
-          <div
-            className="flex flex-col justify-center items-center font-mono"
-            key={planet.url}
-          >
-            <div className="flex gap-8 flex-col justify-center items-center bg-darkRed m-10 w-8/12 lg:w-3/12 p-2 rounded-2xl text-xl">
-              <h3 className="font-audio text-4xl mt-20">{planet.name}</h3>
-              <Button
-                onClick={() => goToPlanetDetails(planet.url)}
-                label={"See Details"}
-              ></Button>
+        {loading ? (
+          <div>
+            <div className="font-audio text-6xl flex flex-col h-screen justify-center items-center">
+              Loading
+              <div className="spinner"></div>
             </div>
           </div>
-        ))
-      )}
+        ) : (
+          planets.map((planet) => (
+            <div
+              className="flex flex-col justify-center items-center font-mono"
+              key={planet.url}
+            >
+              <div className="flex gap-8 flex-col justify-center items-center bg-darkRed m-10 w-8/12 lg:w-3/12 p-2 rounded-2xl text-xl">
+                <h3 className="font-audio text-4xl mt-20">{planet.name}</h3>
+                <Button
+                  onClick={() => goToPlanetDetails(planet.url)}
+                  label={"See Details"}
+                ></Button>
+              </div>
+            </div>
+          ))
+        )}
+      </div>
     </>
   );
 }

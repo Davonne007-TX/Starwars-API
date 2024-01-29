@@ -6,12 +6,3 @@
 :root {
   color-scheme: light dark;
 }
-
-body {
-  margin: 0;
-  padding: 0;
-  background-image: url("images/space.jpg");
-  background-repeat: repeat;
-  background-size: cover;
-  height: 100vh;
-}
