@@ -47,7 +47,7 @@ export default function PlanetsDetails() {
                 More Details about Planet
               </h2>
               <p className="font-audio text-5xl mb-5">{selectedPlanet.name}</p>
-              <div className="font-mono text-darkRed">
+              <div className="font-sans">
                 <p>Climate: {selectedPlanet.climate}</p>
                 <p>Population: {selectedPlanet.population}</p>
                 <p>Diameter: {selectedPlanet.diameter}</p>
