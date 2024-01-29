@@ -43,7 +43,7 @@ export default function PlanetsDetails() {
         {selectedPlanet ? (
           <>
             <div className="font-serif text-2xl mt-10 bg-white text-black m-4 mb-4 p-2 lg:p-8 rounded-2xl">
-              <h2 className="text-4xl font-mono mb-10">
+              <h2 className="text-4xl font-mono mb-10 mt-5">
                 More Details about Planet
               </h2>
               <p className="font-audio text-5xl mb-5">{selectedPlanet.name}</p>
@@ -52,7 +52,7 @@ export default function PlanetsDetails() {
               <p>Diameter: {selectedPlanet.diameter}</p>
               <p>Gravity: {selectedPlanet.gravity}</p>
               <button
-                className="mt-20 bg-black p-2 rounded-full font-audio text-white hover:underline"
+                className="mt-10 bg-black p-2 rounded-full font-audio text-white hover:underline"
                 onClick={backToList}
               >
                 Back To List
