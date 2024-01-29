@@ -35,7 +35,10 @@ export default function PlanetList({ setSelectedPlanet }) {
   return (
     <>
       <div className="mt-10">
-        <Link to="/" className="font-audio text-5xl">
+        <Link
+          to="/"
+          className="font-audio text-5xl hover:text-darkRed hover:underline"
+        >
           Star Wars Planets
         </Link>
       </div>
@@ -51,11 +54,11 @@ export default function PlanetList({ setSelectedPlanet }) {
             className="flex flex-col justify-center items-center font-mono"
             key={planet.url}
           >
-            <div className="flex gap-10 flex-col bg-darkRed m-10 w-4/12 p-2 rounded-2xl text-xl">
+            <div className="flex gap-10 flex-col justify-center items-center bg-darkRed m-10 w-6/12 lg:w-3/12 p-2 rounded-2xl text-xl">
               <h3 className="font-audio text-3xl">{planet.name}</h3>
               <button
                 type="button"
-                className="hover:text-black"
+                className="hover:text-darkRed bg-black rounded-full w-40"
                 onClick={() => goToPlanetDetails(planet.url)}
               >
                 See Details
