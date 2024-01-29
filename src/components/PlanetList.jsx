@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Button from "./Button";
 import "./css/spinner.css";
 
 export default function PlanetList({ setSelectedPlanet }) {
@@ -58,12 +59,11 @@ export default function PlanetList({ setSelectedPlanet }) {
           >
             <div className="flex gap-8 flex-col justify-center items-center bg-darkRed m-10 w-8/12 lg:w-3/12 p-2 rounded-2xl text-xl">
               <h3 className="font-audio text-4xl mt-20">{planet.name}</h3>
-              <button
-                className="mb-20 bg-black p-2 rounded-full font-audio text-white hover:underline"
+              <Button
                 onClick={() => goToPlanetDetails(planet.url)}
-              >
-                See Details
-              </button>
+                className="mb-20 bg-black p-2 rounded-full font-audio text-white hover:underline"
+                label={"See Details"}
+              ></Button>
             </div>
           </div>
         ))

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import Button from "./Button";
 
 export default function PlanetsDetails() {
   const [selectedPlanet, setSelectedPlanet] = useState("");
@@ -57,12 +58,11 @@ export default function PlanetsDetails() {
                 <p>Terrain:{selectedPlanet.terrain}</p>
               </div>
 
-              <button
+              <Button
                 className="mt-10 bg-black p-2 rounded-full font-audio text-white hover:underline"
                 onClick={backToList}
-              >
-                Back To List
-              </button>
+                label={"Back To List"}
+              ></Button>
             </div>
           </>
         ) : (

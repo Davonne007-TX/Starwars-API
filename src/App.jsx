@@ -8,26 +8,15 @@ import { useState } from "react";
 function App() {
   const [selectedPlanet, setSelectedPlanet] = useState(null);
   return (
-    <>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route
-          path="/planets"
-          element={<PlanetList setSelectedPlanet={setSelectedPlanet} />}
-        />
-        <Route path="/planet-details/:id" element={<PlanetsDetails />} />
-      </Routes>
-    </>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route
+        path="/planets"
+        element={<PlanetList setSelectedPlanet={setSelectedPlanet} />}
+      />
+      <Route path="/planet-details/:id" element={<PlanetsDetails />} />
+    </Routes>
   );
 }
 
 export default App;
-
-// {selectedPlanet ? (
-//   <PlanetsDetails
-//     planet={selectedPlanet}
-//     setSelectedPlanet={setSelectedPlanet}
-//   />
-// ) : (
-//   <PlanetList setSelectedPlanet={setSelectedPlanet} />
-// )}
