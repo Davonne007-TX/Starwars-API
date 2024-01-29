@@ -45,8 +45,10 @@ export default function PlanetList({ setSelectedPlanet }) {
 
       {loading ? (
         <>
-          <div className="loading">Loading</div>
-          <div className="spinner"></div>
+          <div className="font-audio text-6xl flex flex-col h-screen justify-center items-center">
+            Loading
+            <div className="spinner"></div>
+          </div>
         </>
       ) : (
         planets.map((planet) => (
@@ -54,11 +56,10 @@ export default function PlanetList({ setSelectedPlanet }) {
             className="flex flex-col justify-center items-center font-mono"
             key={planet.url}
           >
-            <div className="flex gap-10 flex-col justify-center items-center bg-darkRed m-10 w-6/12 lg:w-3/12 p-2 rounded-2xl text-xl">
-              <h3 className="font-audio text-3xl">{planet.name}</h3>
+            <div className="flex gap-8 flex-col justify-center items-center bg-darkRed m-10 w-8/12 lg:w-3/12 p-2 rounded-2xl text-xl">
+              <h3 className="font-audio text-4xl mt-20">{planet.name}</h3>
               <button
-                type="button"
-                className="hover:text-darkRed bg-black rounded-full w-40"
+                className="mb-20 bg-black p-2 rounded-full font-audio text-white hover:underline"
                 onClick={() => goToPlanetDetails(planet.url)}
               >
                 See Details
