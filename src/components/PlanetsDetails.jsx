@@ -47,10 +47,16 @@ export default function PlanetsDetails() {
                 More Details about Planet
               </h2>
               <p className="font-audio text-5xl mb-5">{selectedPlanet.name}</p>
-              <p>Climate: {selectedPlanet.climate}</p>
-              <p>Population: {selectedPlanet.population}</p>
-              <p>Diameter: {selectedPlanet.diameter}</p>
-              <p>Gravity: {selectedPlanet.gravity}</p>
+              <div className="font-mono text-darkRed">
+                <p>Climate: {selectedPlanet.climate}</p>
+                <p>Population: {selectedPlanet.population}</p>
+                <p>Diameter: {selectedPlanet.diameter}</p>
+                <p>Rotation Period:{selectedPlanet.rotation_period}</p>
+                <p>Gravity: {selectedPlanet.gravity}</p>
+                <p>Orbital Period: {selectedPlanet.orbital_period}</p>
+                <p>Terrain:{selectedPlanet.terrain}</p>
+              </div>
+
               <button
                 className="mt-10 bg-black p-2 rounded-full font-audio text-white hover:underline"
                 onClick={backToList}
@@ -60,7 +66,7 @@ export default function PlanetsDetails() {
             </div>
           </>
         ) : (
-          <p>Error loading details</p>
+          <p className="font-audio text-5xl">Planet is loading</p>
         )}
       </div>
     </>
