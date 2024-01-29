@@ -9,7 +9,7 @@ export default function PlanetsDetails() {
   useEffect(() => {
     const fetchPlanetDetails = async () => {
       try {
-        const response = await fetch(`http://swapi.dev/api/planets/${id}`);
+        const response = await fetch(`https://swapi.dev/api/planets/${id}`);
         const planetDetails = await response.json();
         console.log("Selected Planet:", planetDetails);
         setSelectedPlanet(planetDetails);
