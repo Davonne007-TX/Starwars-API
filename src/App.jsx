@@ -17,11 +17,7 @@ function App() {
           path="/planets"
           element={<PlanetList setSelectedPlanet={setSelectedPlanet} />}
         />
-        <Route
-          path="/planet-details"
-          element={<PlanetsDetails />}
-          selectedPlanet={selectedPlanet}
-        />
+        <Route path="/planet-details/:id" element={<PlanetsDetails />} />
       </Routes>
     </>
   );

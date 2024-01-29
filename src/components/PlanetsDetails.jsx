@@ -1,25 +1,28 @@
 import NavBar from "./NavBar";
-import { useEffect, useState, useParams } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
-export default function PlanetsDetails({ planet, setSelectedPlanet }) {
-  const [singlePlanet, setSinglePlanet] = useState(null);
+export default function PlanetsDetails() {
+  const [selectedPlanet, setSelectedPlanet] = useState("");
+  const { id } = useParams();
 
   useEffect(() => {
-    const fetchPlanetDetails = async (id) => {
+    const fetchPlanetDetails = async () => {
       try {
         const response = await fetch(`http://swapi.dev/api/planets/${id}`);
-
-        const getSinglePlanet = await response.json();
-        console.log("Single Planet:", getSinglePlanet);
-        setSinglePlanet(getSinglePlanet);
+        const planetDetails = await response.json();
+        console.log("Selected Pokemon:", planetDetails);
+        setSelectedPlanet(planetDetails);
       } catch (error) {
-        console.error("Error", error);
+        console.error("Error:", error);
       }
     };
-    fetchPlanetDetails();
-  }, []);
+    if (id) {
+      fetchPlanetDetails();
+    }
+  }, [id]);
 
+  //use navigate
   const navigate = useNavigate();
 
   function backToList() {
@@ -35,15 +38,15 @@ export default function PlanetsDetails({ planet, setSelectedPlanet }) {
         <NavBar />
       </div>
 
-      <div className="single-planet-container">
-        {singlePlanet ? (
+      <div className="single-planet-container}">
+        {selectedPlanet ? (
           <>
             <h2>More Details about Planet</h2>
-            <p>Name:{singlePlanet.name}</p>
-            <p>Climate: {singlePlanet.climate}</p>
-            <p>Population: {singlePlanet.population}</p>
-            <p>Diameter: {singlePlanet.diameter}</p>
-            <p>Gravity: {singlePlanet.gravity}</p>
+            <p>Name:{selectedPlanet.name}</p>
+            <p>Climate: {selectedPlanet.climate}</p>
+            <p>Population: {selectedPlanet.population}</p>
+            <p>Diameter: {selectedPlanet.diameter}</p>
+            <p>Gravity: {selectedPlanet.gravity}</p>
             <button className="goBack" onClick={backToList}>
               Back To List
             </button>

@@ -8,8 +8,9 @@ export default function PlanetList({ setSelectedPlanet }) {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
-  function goToPlanetDetails() {
-    navigate("/planet-details");
+  function goToPlanetDetails(url) {
+    const planetId = url.split("/").filter(Boolean).pop(); // Extract the planet ID
+    navigate(`/planet-details/${planetId}`);
   }
 
   function capitalizeFirstLetter(string) {
@@ -50,14 +51,11 @@ export default function PlanetList({ setSelectedPlanet }) {
         planets.map((planet) => (
           <div className="starWarsPlanet" key={planet.url}>
             <h3>{planet.name}</h3>
-            <p>Climate: {capitalizeFirstLetter(planet.climate)}</p>
-            <p>Population: {planet.population}</p>
-            <p>Gravity:{planet.gravity}</p>
-            <p>Orbital Period:{planet.orbital_period}</p>
+
             <button
               type="button"
               className="seeDetails"
-              onClick={goToPlanetDetails}
+              onClick={() => goToPlanetDetails(planet.url)}
             >
               See Details
             </button>
