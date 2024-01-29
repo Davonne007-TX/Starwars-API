@@ -34,8 +34,8 @@ export default function PlanetList({ setSelectedPlanet }) {
 
   return (
     <>
-      <div className="header">
-        <Link to="/" className="">
+      <div className="mt-10">
+        <Link to="/" className="font-audio text-5xl">
           Star Wars Planets
         </Link>
       </div>
@@ -47,16 +47,20 @@ export default function PlanetList({ setSelectedPlanet }) {
         </>
       ) : (
         planets.map((planet) => (
-          <div className="starWarsPlanet" key={planet.url}>
-            <h3>{planet.name}</h3>
-
-            <button
-              type="button"
-              className="seeDetails"
-              onClick={() => goToPlanetDetails(planet.url)}
-            >
-              See Details
-            </button>
+          <div
+            className="flex flex-col justify-center items-center font-mono"
+            key={planet.url}
+          >
+            <div className="flex gap-10 flex-col bg-darkRed m-10 w-4/12 p-2 rounded-2xl text-xl">
+              <h3 className="font-audio text-3xl">{planet.name}</h3>
+              <button
+                type="button"
+                className="hover:text-black"
+                onClick={() => goToPlanetDetails(planet.url)}
+              >
+                See Details
+              </button>
+            </div>
           </div>
         ))
       )}

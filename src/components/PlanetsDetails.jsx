@@ -36,7 +36,7 @@ export default function PlanetsDetails() {
         </Link>
       </div>
 
-      <div className="single-planet-container}">
+      <div className="">
         {selectedPlanet ? (
           <>
             <h2>More Details about Planet</h2>
