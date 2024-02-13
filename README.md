@@ -2,7 +2,7 @@
 
 #Fullstack Academy Project
 
-Deployed Site: https://starwars-project-fullstack-a.netlify.app/
+Deployed Site: https://starwars-project-fullstack-academy.netlify.app/
 
 Key Features:
 
