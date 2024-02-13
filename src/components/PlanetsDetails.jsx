@@ -35,7 +35,7 @@ export default function PlanetsDetails() {
         <br />
         <Link
           to="/"
-          className="font-audio mt-20 md:mt-10 lg:mt-10  text-4xl hover:text-darkRed hover:underline"
+          className="font-audio text-white mt-20 md:mt-10 lg:mt-10  text-4xl hover:text-darkRed hover:underline"
         >
           Selected Planet Details
         </Link>

@@ -38,7 +38,7 @@ export default function PlanetList() {
       <main className="bg-space bg-contain flex flex-col justify-center">
         <Link
           to="/"
-          className="font-audio text-5xl hover:text-darkRed hover:underline mt-10"
+          className="font-audio text-white text-5xl hover:text-darkRed hover:underline mt-10"
         >
           Star Wars Planets
         </Link>
