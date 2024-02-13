@@ -44,7 +44,7 @@ export default function PlanetList() {
         </Link>
 
         {loading ? (
-          <div className="font-audio text-6xl flex flex-col h-screen justify-center items-center">
+          <div className="font-audio text-white text-6xl flex flex-col h-screen justify-center items-center">
             Loading
             <div className="spinner"></div>
           </div>

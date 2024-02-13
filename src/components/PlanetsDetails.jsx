@@ -69,7 +69,7 @@ export default function PlanetsDetails() {
               </div>
             </>
           ) : (
-            <p className="font-audio text-5xl">Planet is loading</p>
+            <p className="font-audio text-5xl text-white">Planet is loading</p>
           )}
         </div>
       </section>
