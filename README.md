@@ -1,6 +1,6 @@
 # Star Wars API Project
 
-#Fullstack Academy Side Project
+#Fullstack Academy Project
 
 Deployed Site: `davonnes-starwars-api-project.netlify.app`
 
