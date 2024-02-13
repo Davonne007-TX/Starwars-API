@@ -1,5 +1,9 @@
 # Star Wars API Project
 
+#Fullstack Academy Side Project
+
+Deployed Site: `davonnes-starwars-api-project.netlify.app`
+
 Key Features:
 
 - Asynchronous data fetching using async/await for a smoother user experience.
