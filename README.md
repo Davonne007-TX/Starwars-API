@@ -2,7 +2,7 @@
 
 #Fullstack Academy Project
 
-Deployed Site: `davonnes-starwars-api-project.netlify.app`
+Deployed Site: davonnes-starwars-api-project.netlify.app
 
 Key Features:
 
