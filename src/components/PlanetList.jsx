@@ -35,7 +35,7 @@ export default function PlanetList() {
 
   return (
     <>
-      <div className=" flex flex-col">
+      <div className="bg-space bg-contain flex flex-col justify-center">
         <Link
           to="/"
           className="font-audio text-5xl hover:text-darkRed hover:underline mt-10"

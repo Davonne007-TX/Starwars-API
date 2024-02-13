@@ -5,6 +5,8 @@
 
 :root {
   color-scheme: light dark;
-  background-image: url(/images/space.jpg);
-  background-size: contain;
+}
+
+.bg-space {
+  background-image: url("/images/space.jpg");
 }
