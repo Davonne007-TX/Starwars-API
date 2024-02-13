@@ -35,7 +35,7 @@ export default function PlanetList() {
 
   return (
     <>
-      <div className="bg-space bg-contain flex flex-col justify-center">
+      <main className="bg-space bg-contain flex flex-col justify-center">
         <Link
           to="/"
           className="font-audio text-5xl hover:text-darkRed hover:underline mt-10"
@@ -44,11 +44,9 @@ export default function PlanetList() {
         </Link>
 
         {loading ? (
-          <div>
-            <div className="font-audio text-6xl flex flex-col h-screen justify-center items-center">
-              Loading
-              <div className="spinner"></div>
-            </div>
+          <div className="font-audio text-6xl flex flex-col h-screen justify-center items-center">
+            Loading
+            <div className="spinner"></div>
           </div>
         ) : (
           planets.map((planet) => (
@@ -56,7 +54,7 @@ export default function PlanetList() {
               className="flex flex-col justify-center items-center font-mono"
               key={planet.url}
             >
-              <div className="flex gap-8 flex-col justify-center items-center bg-darkRed m-10 w-8/12 lg:w-3/12 p-2 rounded-2xl text-xl">
+              <div className="flex flex-col justify-center items-center mt-20 bg-darkRed m-10 w-80 md:w-96 lg:w-3/12 p-2 rounded-2xl text-xl">
                 <h3 className="font-audio text-4xl mt-20">{planet.name}</h3>
                 <Button
                   onClick={() => goToPlanetDetails(planet.url)}
@@ -66,7 +64,7 @@ export default function PlanetList() {
             </div>
           ))
         )}
-      </div>
+      </main>
     </>
   );
 }
