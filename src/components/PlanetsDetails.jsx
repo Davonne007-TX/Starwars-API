@@ -3,14 +3,17 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import Button from "./Button";
 
 export default function PlanetsDetails() {
-  const [selectedPlanet, setSelectedPlanet] = useState("");
+  const [selectedPlanet, setSelectedPlanet] = useState({});
   const { id } = useParams();
 
   useEffect(() => {
     const fetchPlanetDetails = async () => {
       try {
-        const response = await fetch(`https://swapi.dev/api/planets/${id}`);
-        const planetDetails = await response.json();
+        const response = await fetch(
+          `https://www.swapi.tech/api/planets/${id}`
+        );
+        const planetDetailsData = await response.json();
+        const planetDetails = planetDetailsData.result;
         console.log("Selected Planet:", planetDetails);
         setSelectedPlanet(planetDetails);
       } catch (error) {
@@ -51,7 +54,7 @@ export default function PlanetsDetails() {
                   <p className="font-audio text-3xl md:text-5xl lg:text-5xl mb-5">
                     {selectedPlanet.name}
                   </p>
-                  <div className="font-sans text-lg md:text-2xl lg:text-2xl">
+                  <div className="font-sans text-lg md:text-2xl lg:text-2xl text-black">
                     <p>Climate: {selectedPlanet.climate}</p>
                     <p>Population: {selectedPlanet.population}</p>
                     <p>Diameter: {selectedPlanet.diameter}</p>

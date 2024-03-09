@@ -20,7 +20,7 @@ export default function PlanetList() {
   useEffect(() => {
     const fetchPlanets = async () => {
       try {
-        const response = await fetch("https://swapi.dev/api/planets");
+        const response = await fetch("https://www.swapi.tech/api/planets/");
         const ourPlanets = await response.json();
         console.log("Star Wars Planets:", ourPlanets);
         setPlanets(ourPlanets.results);
