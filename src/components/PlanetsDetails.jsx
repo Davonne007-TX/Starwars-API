@@ -13,6 +13,7 @@ export default function PlanetsDetails() {
           `https://www.swapi.tech/api/planets/${id}`
         );
         const planetDetailsData = await response.json();
+        console.log(planetDetailsData);
         const planetDetails = planetDetailsData.result.properties;
         console.log("Selected Planet:", planetDetails);
         setSelectedPlanet(planetDetails);

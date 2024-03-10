@@ -13,9 +13,9 @@ export default function PlanetList() {
     navigate(`/planet-details/${planetId}`);
   }
 
-  function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  }
+  // function capitalizeFirstLetter(string) {
+  //   return string.charAt(0).toUpperCase() + string.slice(1);
+  // }
 
   useEffect(() => {
     const fetchPlanets = async () => {
